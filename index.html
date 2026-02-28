@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KarthickRaj | Creative Developer</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -74,14 +72,11 @@
         }
     </script>
 
-    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     
-    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -92,7 +87,6 @@
             cursor: none;
         }
 
-        /* Custom Cursor */
         .cursor-dot,
         .cursor-outline {
             position: fixed;
@@ -121,7 +115,6 @@
             border-color: #8b5cf6;
         }
 
-        /* Glassmorphism Utilities */
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
@@ -136,7 +129,6 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* Text Gradients */
         .gradient-text {
             background: linear-gradient(135deg, #8b5cf6, #06b6d4, #ec4899);
             -webkit-background-clip: text;
@@ -152,7 +144,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Neon Button */
         .neon-btn {
             position: relative;
             background: linear-gradient(135deg, #8b5cf6, #06b6d4);
@@ -213,7 +204,6 @@
             box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
         }
 
-        /* CV Download Button Specific */
         .cv-btn {
             position: relative;
             background: linear-gradient(135deg, #10b981, #06b6d4);
@@ -247,7 +237,6 @@
             box-shadow: 0 10px 30px rgba(16, 185, 129, 0.5);
         }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #050505; }
         ::-webkit-scrollbar-thumb {
@@ -255,7 +244,6 @@
             border-radius: 4px;
         }
 
-        /* 3D Canvas */
         #canvas-container {
             position: fixed;
             top: 0;
@@ -266,7 +254,6 @@
             pointer-events: none;
         }
 
-        /* Tech Stack Marquee */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -286,7 +273,6 @@
             filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));
         }
 
-        /* Timeline */
         .timeline-item {
             position: relative;
             padding-left: 2rem;
@@ -304,7 +290,6 @@
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
         }
 
-        /* Skill Card Styles */
         .skill-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -339,7 +324,6 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
         }
 
-        /* Profile Container - Fixed positioning */
         .profile-wrapper {
             position: relative;
             width: 320px;
@@ -394,7 +378,6 @@
             filter: grayscale(0%) contrast(1.2) brightness(1.1);
         }
 
-        /* Floating badges around profile */
         .profile-badge {
             position: absolute;
             background: rgba(255, 255, 255, 0.05);
@@ -420,7 +403,6 @@
         .badge-2 { bottom: 20%; left: -15%; animation: float 4s ease-in-out infinite 1s; color: #06b6d4; border-color: rgba(6, 182, 212, 0.3); }
         .badge-3 { top: 50%; right: -25%; animation: float 4s ease-in-out infinite 2s; color: #ec4899; border-color: rgba(236, 72, 153, 0.3); }
 
-        /* Shine effect overlay */
         .shine-overlay {
             position: absolute;
             top: 0;
@@ -439,7 +421,6 @@
             transition: left 0.7s ease;
         }
 
-        /* Tech Stack Slider Styles */
         .slider-track {
             display: flex;
             transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
@@ -517,7 +498,6 @@
             border-radius: 6px;
         }
 
-        /* Mobile responsiveness for profile */
         @media (max-width: 768px) {
             .profile-container, .profile-wrapper {
                 width: 260px;
@@ -528,7 +508,6 @@
             }
         }
 
-        /* Contact Section Dark Theme Styles */
         .contact-input {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -554,7 +533,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Success Message Styles */
         .success-message {
             display: none;
             background: rgba(16, 185, 129, 0.1);
@@ -597,14 +575,11 @@
 </head>
 <body class="font-poppins antialiased selection:bg-purple-500 selection:text-white">
 
-    <!-- Custom Cursor -->
     <div class="cursor-dot hidden md:block"></div>
     <div class="cursor-outline hidden md:block"></div>
 
-    <!-- 3D Background -->
     <div id="canvas-container"></div>
 
-    <!-- Navigation -->
     <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <a href="#home" class="flex items-center gap-3 group cursor-hover">
@@ -647,14 +622,12 @@
 
             <a href="#contact" class="hidden lg:block neon-btn text-sm py-3 px-6 cursor-hover">Let's Talk</a>
             
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="lg:hidden text-white cursor-hover">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-6">
         <button id="close-menu" class="absolute top-6 right-6 text-white cursor-hover">
             <i data-lucide="x" class="w-8 h-8"></i>
@@ -669,7 +642,7 @@
     </div>
 
     <main>
-        <!-- Hero Section -->
+
         <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
             <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 <div class="order-2 lg:order-1">
@@ -700,7 +673,7 @@
                         <a href="#contact" class="neon-btn-outline cursor-hover">Contact Me</a>
                     </div>
 
-                    <!-- CV Download Button -->
+
                     <div class="flex items-center gap-4">
                         <a href="https://drive.google.com/file/d/1UBovlRAJyQoVGYdzr28uoEoGL88btkqP/view?usp=drivesdk" download class="cv-btn cursor-hover">
                             <i data-lucide="download" class="w-5 h-5"></i>
@@ -710,23 +683,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="grid grid-cols-3 gap-8 mt-16 border-t border-white/10 pt-8">
-                    <div>
-                        <h3 class="text-3xl font-bold text-white mb-1">50+</h3>
-                        <p class="text-sm text-white/40">Projects Done</p>
-                    </div>
-                    <div>
-                        <h3 class="text-3xl font-bold text-white mb-1">30+</h3>
-                        <p class="text-sm text-white/40">Happy Clients</p>
-                    </div>
-                    <div>
-                        <h3 class="text-3xl font-bold text-white mb-1">3+</h3>
-                        <p class="text-sm text-white/40">Years Exp.</p>
-                    </div>
-                </div>
-             </div>    -->
-
-                <!-- Profile Photo Section - Fixed Positioning -->
                 <div class="order-1 lg:order-2 flex justify-center items-center relative">
                     <div class="profile-wrapper">
                         <div class="profile-container cursor-hover" id="profile-container">
@@ -740,7 +696,6 @@
                             </div>
                         </div>
                         
-                        <!-- Floating Badges -->
                         <div class="profile-badge badge-1">
                             <i data-lucide="code-2" class="w-4 h-4 inline mr-1"></i> Developer
                         </div>
@@ -752,7 +707,6 @@
                         </div>
                     </div>
                     
-                    <!-- Decorative Elements -->
                     <div class="absolute -top-10 -right-2 glass-card p-3 animate-float">
                         <i data-lucide="code-2" class="w-6 h-6 text-purple-400"></i>
                     </div>
@@ -766,7 +720,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16 reveal-on-scroll">
@@ -823,7 +776,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="services" class="py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16 reveal-on-scroll">
@@ -832,7 +784,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
+
                     <div class="glass-card p-8 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] reveal-on-scroll cursor-hover">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-purple-500/20">
                             <i data-lucide="code" class="w-7 h-7 text-white"></i>
@@ -848,7 +800,6 @@
                         </ul>
                     </div>
 
-                    <!-- Service Card 2 -->
                     <div class="glass-card p-8 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(6,182,212,0.15)] reveal-on-scroll cursor-hover" style="transition-delay: 100ms;">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-cyan-500/20">
                             <i data-lucide="code-2" class="w-7 h-7 text-white"></i>
@@ -862,7 +813,6 @@
                         </ul>
                     </div>
 
-                    <!-- Service Card 3 -->
                     <div class="glass-card p-8 group hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] reveal-on-scroll cursor-hover" style="transition-delay: 200ms;">
                         <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-emerald-500/20">
                             <i data-lucide="cloud" class="w-7 h-7 text-white"></i>
@@ -879,7 +829,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="py-24 relative overflow-hidden">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[100px]"></div>
             
@@ -889,7 +838,6 @@
                     <p class="text-white/50 max-w-2xl mx-auto">Proficiency levels in my core technologies.</p>
                 </div>
 
-                <!-- Frontend Skills -->
                 <div class="mb-12 reveal-on-scroll">
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
@@ -900,7 +848,6 @@
                     
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                        <!-- HTML -->
                         <div class="skill-card">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
@@ -916,7 +863,6 @@
                             </div>
                         </div>
 
-                        <!-- CSS -->
                         <div class="skill-card">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
@@ -932,7 +878,6 @@
                             </div>
                         </div>
 
-                        <!-- JS -->
                         <div class="skill-card">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex items-center gap-3">
@@ -948,7 +893,6 @@
                             </div>
                         </div>
 
-                <!-- Bootstrap (NEW) -->
                 <div class="skill-card">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -964,7 +908,6 @@
                     </div>
                 </div>
 
-                <!-- GitHub -->
                 <div class="skill-card">
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
@@ -983,7 +926,6 @@
             </div>
         </div>
 
-                <!-- Backend Skills -->
                 <div class="mb-12 reveal-on-scroll">
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
@@ -1071,7 +1013,6 @@
                     </div>
                 </div>
 
-                <!-- AWS Cloud -->
                 <div class="reveal-on-scroll">
                     <div class="flex items-center gap-4 mb-8">
                         <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center">
@@ -1145,7 +1086,6 @@
             </div>
         </section>
 
-        <!-- Tech Stack Section -->
         <section id="tech-stack" class="py-24 relative overflow-hidden">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -1286,7 +1226,6 @@
             </div>
         </section>
 
-        <!-- Projects Section - UPDATED with two specific projects -->
         <section id="projects" class="py-24 relative">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16 reveal-on-scroll">
@@ -1295,7 +1234,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <!-- Project 1: Portfolio Website -->
+
                     <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]">
                         <div class="relative h-64 overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 z-0"></div>
@@ -1333,7 +1272,6 @@
                         </div>
                     </div>
 
-                    <!-- Project 2: Cloud-Based Django Web Application -->
                     <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]" style="transition-delay: 100ms;">
                         <div class="relative h-64 overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 z-0"></div>
@@ -1373,7 +1311,6 @@
                     </div>
                 </div>
                 
-                <!-- <div class="text-center mt-12">
                     <a href="https://github.com/karthick-rgb" target="_blank" class="neon-btn-outline inline-flex items-center gap-2 cursor-hover">
                         View All Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -1381,12 +1318,11 @@
             </div>
         </section>
 
-        <!-- Contact Section - FIXED FORM with email working -->
         <section id="contact" class="py-24 relative">
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-600/5 rounded-full blur-[100px]"></div>
             
             <div class="max-w-6xl mx-auto px-6 relative z-10">
-                <!-- Section Title -->
+    
                 <div class="text-center mb-16 reveal-on-scroll">
                     <h2 class="font-orbitron text-4xl md:text-5xl font-bold text-white mb-4">
                         Contact <span class="gradient-text">Me</span>
@@ -1395,16 +1331,16 @@
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
-                    <!-- Left Side - Contact Info -->
+                   
                     <div class="reveal-on-scroll">
                         <h3 class="text-3xl font-bold text-white mb-4">Let's Work Together</h3>
                         <p class="text-white/50 mb-8 leading-relaxed max-w-md">
                             Have a project in mind? I'd love to hear about it. Let's create something amazing together!
                         </p>
 
-                        <!-- Contact Cards -->
+                        
                         <div class="space-y-4">
-                            <!-- Email -->
+                           
                             <div class="contact-card rounded-2xl p-5 flex items-center gap-4 cursor-hover group">
                                 <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                                     <i data-lucide="mail" class="w-5 h-5"></i>
@@ -1415,7 +1351,6 @@
                                 </div>
                             </div>
 
-                            <!-- Phone -->
                             <div class="contact-card rounded-2xl p-5 flex items-center gap-4 cursor-hover group">
                                 <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                                     <i data-lucide="phone" class="w-5 h-5"></i>
@@ -1426,7 +1361,6 @@
                                 </div>
                             </div>
 
-                            <!-- Location -->
                             <div class="contact-card rounded-2xl p-5 flex items-center gap-4 cursor-hover group">
                                 <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
                                     <i data-lucide="map-pin" class="w-5 h-5"></i>
@@ -1439,12 +1373,9 @@
                         </div>
                     </div>
 
-                    <!-- Right Side - Contact Form FIXED -->
                     <div class="reveal-on-scroll">
-                        <!-- Form Container -->
                         <div id="formContainer" class="form-container">
                             <form id="contactForm" action="https://formsubmit.co/karthikraj.6369@gmail.com" method="POST" class="space-y-5">
-                                <!-- Name -->
                                 <div class="group">
                                     <input type="text" 
                                            name="name"
@@ -1453,7 +1384,6 @@
                                            required>
                                 </div>
 
-                                <!-- Email -->
                                 <div class="group">
                                     <input type="email" 
                                            name="email"
@@ -1462,7 +1392,6 @@
                                            required>
                                 </div>
 
-                                <!-- Subject -->
                                 <div class="group">
                                     <input type="text" 
                                            name="subject"
@@ -1471,7 +1400,6 @@
                                            required>
                                 </div>
 
-                                <!-- Message -->
                                 <div class="group">
                                     <textarea rows="5" 
                                               name="message"
@@ -1480,13 +1408,11 @@
                                               required></textarea>
                                 </div>
 
-                                <!-- Hidden Settings - FIXED for AJAX -->
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_subject" value="New Portfolio Contact Message!">
                                 <input type="hidden" name="_template" value="table">
                                 <input type="hidden" name="_next" value="#"> <!-- Prevents redirect, handled by fetch -->
 
-                                <!-- Submit Button -->
                                 <button type="submit" 
                                         id="submitBtn"
                                         class="w-full neon-btn flex items-center justify-center gap-2 cursor-hover group">
@@ -1496,7 +1422,6 @@
                             </form>
                         </div>
 
-                        <!-- Success Message (Hidden by default) -->
                         <div id="successMessage" class="success-message">
                             <div class="success-icon">
                                 <i data-lucide="check" class="w-8 h-8 text-white"></i>
@@ -1504,7 +1429,7 @@
                             <h3 class="text-2xl font-bold text-white mb-2">Message Sent!</h3>
                             <p class="text-white/60 mb-4">Thank you for reaching out. I'll get back to you soon!</p>
                             <button onclick="resetForm()" class="neon-btn-outline cursor-hover">
-                                Send Another Message
+                               
                             </button>
                         </div>
                     </div>
@@ -1512,10 +1437,9 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="py-8 border-t border-white/10 relative z-10">
             <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                <!-- Logo -->
+
                 <div class="flex items-center gap-3">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
                         <i data-lucide="hexagon" class="w-6 h-6"></i>
@@ -1523,7 +1447,6 @@
                     <span class="font-orbitron font-bold text-xl text-white tracking-wider">Portfolio</span>
                 </div>
 
-                <!-- Social Icons -->
                 <div class="flex gap-4">
                     <a href="https://www.linkedin.com/in/karthickraj-s-5287b828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-purple-400 hover:border-purple-400 transition-colors cursor-hover">
                         <i data-lucide="linkedin" class="w-4 h-4"></i>
@@ -1534,10 +1457,12 @@
                     <a href="https://www.instagram.com/_karthick_swag_official?igsh=eTFnbzR0amwwZGR3" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover">
                         <i data-lucide="instagram" class="w-4 h-4"></i>
                     </a>
+                    <a href="https://wa.me/qr/PAVEP7KARGARF1" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover">
+                        <i data-lucide="Whatsapp" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
             
-            <!-- Copyright -->
             <div class="text-center mt-6 pt-6 border-t border-white/10">
                 <p class="text-white/40 text-sm">
                     Developed with <span class="text-pink-500">♥</span> by KarthickRaj &copy; 2026
@@ -1545,12 +1470,10 @@
             </div>
         </footer>
     </main>
-
     <script>
-        // Initialize Lucide Icons
+
         lucide.createIcons();
 
-        // --- 1. Custom Cursor Logic ---
         const cursorDot = document.querySelector('.cursor-dot');
         const cursorOutline = document.querySelector('.cursor-outline');
         const hoverElements = document.querySelectorAll('.cursor-hover, a, button');
@@ -1577,7 +1500,6 @@
             });
         });
 
-        // --- 2. Three.js Background (Particles) ---
         const initThreeJS = () => {
             const container = document.getElementById('canvas-container');
             const scene = new THREE.Scene();
@@ -1646,10 +1568,8 @@
 
         initThreeJS();
 
-        // --- 3. GSAP Animations ---
         gsap.registerPlugin(ScrollTrigger);
 
-        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -1661,7 +1581,6 @@
             }
         });
 
-        // Reveal Elements on Scroll
         const revealElements = document.querySelectorAll('.reveal-on-scroll');
         revealElements.forEach(element => {
             gsap.fromTo(element, 
@@ -1680,7 +1599,6 @@
             );
         });
 
-        // --- 4. Typewriter Effect ---
         const roles = ["Full Stack Developer", "Web Architect", "Cloud Architect"];
         let roleIndex = 0;
         let charIndex = 0;
@@ -1715,7 +1633,6 @@
         
         setTimeout(type, 1000);
 
-        // --- 5. Mobile Menu ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -1737,7 +1654,6 @@
             link.addEventListener('click', toggleMenu);
         });
 
-        // --- 6. PROFILE PHOTO 3D TILT EFFECT ---
         const profileContainer = document.getElementById('profile-container');
         const profileCard = document.getElementById('profile-card');
         
@@ -1760,7 +1676,6 @@
                 profileCard.style.transform = 'rotateX(0) rotateY(0) scale(1)';
             });
             
-            // Touch support for mobile
             profileContainer.addEventListener('touchmove', (e) => {
                 const touch = e.touches[0];
                 const rect = profileContainer.getBoundingClientRect();
@@ -1781,7 +1696,6 @@
             });
         }
 
-        // --- 7. TECH STACK SLIDER LOGIC ---
         const track = document.getElementById('track');
         const dots = document.querySelectorAll('.nav-dot');
         let currentIndex = 0;
@@ -1856,18 +1770,15 @@
             }
         }
 
-        // --- 8. CONTACT FORM HANDLING (FIXED - EMAIL WORKS) ---
         const contactForm = document.getElementById('contactForm');
         const formContainer = document.getElementById('formContainer');
         const successMessage = document.getElementById('successMessage');
         const submitBtn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
 
-        // Handle form submission with fetch API to prevent redirect
         contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
-            // Show loading state
             btnText.textContent = 'Sending...';
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.7';
@@ -1880,18 +1791,11 @@
                     body: formData
                 });
                 
-                // formsubmit.co always returns a redirect to the "thank you" page (200 with a redirect),
-                // but fetch follows it. We'll treat any response as success because the email is sent.
-                // In case of network errors, catch will handle.
-                
-                // Show success message
                 formContainer.classList.add('hidden');
                 successMessage.classList.add('show');
                 
-                // Re-initialize icons for success message
                 lucide.createIcons();
                 
-                // Reset button state (though hidden)
                 btnText.textContent = 'Send Message';
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
@@ -1900,14 +1804,12 @@
                 console.error('Error:', error);
                 alert('Something went wrong. Please try again or email me directly at karthikraj.6369@gmail.com');
                 
-                // Reset button
                 btnText.textContent = 'Send Message';
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
             }
         });
 
-        // Reset form function
         window.resetForm = function() {
             contactForm.reset();
             formContainer.classList.remove('hidden');
@@ -1920,3 +1822,4 @@
 </body>
 
 </html>
+
