@@ -548,6 +548,108 @@
             transition: transform 0.35s ease;
         }
 
+        .tech-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 56px;
+            height: 56px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(10, 10, 10, 0.68);
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            z-index: 20;
+        }
+
+        .tech-carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.28);
+            transform: translateY(-50%) scale(1.04);
+        }
+
+        .tech-carousel-arrow.prev {
+            left: 0.75rem;
+        }
+
+        .tech-carousel-arrow.next {
+            right: 0.75rem;
+        }
+
+        .social-link.linkedin-link:hover,
+        .social-link.linkedin-link:focus-visible,
+        .social-link.linkedin-link:active {
+            color: #0a66c2;
+            border-color: #0a66c2;
+            box-shadow: 0 0 18px rgba(10, 102, 194, 0.35);
+        }
+
+        .social-link.github-link:hover,
+        .social-link.github-link:focus-visible,
+        .social-link.github-link:active {
+            color: #ec4899;
+            border-color: #ec4899;
+            box-shadow: 0 0 18px rgba(236, 72, 153, 0.38);
+        }
+
+        .social-link.whatsapp-link:hover,
+        .social-link.whatsapp-link:focus-visible,
+        .social-link.whatsapp-link:active {
+            color: #25d366;
+            border-color: #25d366;
+            box-shadow: 0 0 18px rgba(37, 211, 102, 0.35);
+        }
+
+        .social-link {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            inset: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 9999px;
+            background: currentColor;
+            opacity: 0.12;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .social-link i {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.25s ease;
+        }
+
+        .social-link:hover,
+        .social-link:focus-visible,
+        .social-link:active {
+            transform: translateY(-4px) scale(1.08);
+        }
+
+        .social-link:hover::before,
+        .social-link:focus-visible::before,
+        .social-link:active::before {
+            width: 115%;
+            height: 115%;
+        }
+
+        .social-link:hover i,
+        .social-link:focus-visible i,
+        .social-link:active i {
+            transform: scale(1.16) rotate(-6deg);
+        }
+
         @media (max-width: 768px) {
             .profile-container, .profile-wrapper {
                 width: 260px;
@@ -1390,7 +1492,7 @@
                     <div class="flex items-center justify-between mb-3">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded bg-gray-500/20 flex items-center justify-center">
-                                <i data-lucide="github" class="w-4 h-4 text-gray-400"></i>
+                                <i class="fab fa-github text-gray-300 text-lg"></i>
                             </div>
                             <span class="text-white font-semibold">GitHub</span>
                         </div>
@@ -1692,6 +1794,12 @@
                         </div>
 
                     </div>
+                    <button id="tech-prev" class="tech-carousel-arrow prev cursor-hover" type="button" aria-label="Previous tech stack slide">
+                        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                    </button>
+                    <button id="tech-next" class="tech-carousel-arrow next cursor-hover" type="button" aria-label="Next tech stack slide">
+                        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                    </button>
                 </div>
 
                 <div class="flex justify-center gap-4 mt-8" id="dots-container">
@@ -1795,6 +1903,8 @@
                                         <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">HTML</span>
                                         <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">CSS</span>
                                         <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">JavaScript</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Three.js</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">GSAP</span>
                                         <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Travel API</span>
                                     </div>
                                     <a href="https://trip-for-heaven.up.railway.app/" target="_blank" class="inline-flex items-center gap-2 text-white hover:text-pink-300 transition-colors text-sm font-medium">
@@ -1955,13 +2065,13 @@
                 </div>
 
                 <div class="social-links flex gap-4">
-                    <a href="https://www.linkedin.com/in/karthickraj-s-5287b828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover">
+                    <a href="https://www.linkedin.com/in/karthickraj-s-5287b828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-link linkedin-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 transition-colors cursor-hover">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/karthick-rgb" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover ">
+                    <a href="https://github.com/karthick-rgb" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="social-link github-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 cursor-hover ">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://wa.me/916369318216" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-green-400 hover:border-green-400 transition-colors cursor-hover">
+                    <a href="https://wa.me/916369318216" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="social-link whatsapp-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 cursor-hover">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -2223,6 +2333,8 @@
 
         const track = document.getElementById('track');
         const dots = document.querySelectorAll('#dots-container .nav-dot');
+        const techPrev = document.getElementById('tech-prev');
+        const techNext = document.getElementById('tech-next');
         let currentIndex = 0;
         const totalSlides = 3;
 
@@ -2240,6 +2352,18 @@
                 const index = parseInt(dot.getAttribute('data-index'));
                 updateSlider(index);
             });
+        });
+
+        techPrev.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                updateSlider(currentIndex - 1);
+            }
+        });
+
+        techNext.addEventListener('click', () => {
+            if (currentIndex < totalSlides - 1) {
+                updateSlider(currentIndex + 1);
+            }
         });
 
         let startX = 0;
