@@ -499,6 +499,55 @@
             border-radius: 6px;
         }
 
+        .tech-slide-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tech-slide-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.75);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+
+        .tech-slide-btn:hover {
+            color: #ffffff;
+            border-color: #3b82f6;
+            background: rgba(59, 130, 246, 0.14);
+            transform: translateY(-2px);
+        }
+
+        .tech-slide-bar {
+            position: relative;
+            width: min(100%, 320px);
+            height: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .tech-slide-fill {
+            width: 33.333%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            box-shadow: 0 0 18px rgba(59, 130, 246, 0.7);
+            transform: translateX(0%);
+            transition: transform 0.35s ease;
+        }
+
         @media (max-width: 768px) {
             .profile-container, .profile-wrapper {
                 width: 260px;
@@ -572,6 +621,434 @@
         .form-container.hidden {
             display: none;
         }
+
+        /* Responsive foundation: mobile-first safety layer for the static HTML/Tailwind page. */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        body {
+            min-width: 320px;
+        }
+
+        main,
+        section,
+        header,
+        footer {
+            max-width: 100vw;
+            overflow-x: clip;
+        }
+
+        img,
+        svg,
+        canvas,
+        video {
+            max-width: 100%;
+        }
+
+        img:not(.profile-photo):not(.object-cover) {
+            height: auto;
+        }
+
+        a,
+        button,
+        .cursor-hover {
+            touch-action: manipulation;
+        }
+
+        a,
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        #navbar > div,
+        main > section > div,
+        footer > div {
+            width: min(100%, 1280px);
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        #mobile-menu {
+            z-index: 60;
+            padding: 5rem 1.25rem 2rem;
+            overflow-y: auto;
+        }
+
+        #mobile-menu a,
+        #mobile-menu button,
+        #mobile-menu-btn,
+        #close-menu,
+        .social-link {
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        #mobile-menu a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        #home {
+            min-height: auto;
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+        }
+
+        section[id]:not(#home) {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        #home > div {
+            gap: 2.5rem;
+        }
+
+        #home h1 {
+            font-size: 2.75rem;
+            line-height: 1.05;
+            overflow-wrap: anywhere;
+        }
+
+        #home p,
+        section p {
+            font-size: 1rem;
+        }
+
+        #home .h-12 {
+            min-height: 4rem;
+            height: auto;
+        }
+
+        #typewriter {
+            overflow-wrap: anywhere;
+        }
+
+        .neon-btn,
+        .neon-btn-outline,
+        .cv-btn {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            white-space: normal;
+        }
+
+        .neon-btn {
+            padding: 0.875rem 1.5rem;
+        }
+
+        .neon-btn-outline {
+            padding: 0.75rem 1.375rem;
+        }
+
+        .cv-btn {
+            padding: 0.75rem 1.25rem;
+        }
+
+        .profile-wrapper,
+        .profile-container {
+            width: min(76vw, 260px);
+            height: min(76vw, 260px);
+        }
+
+        .profile-badge,
+        #home .order-1 > .absolute {
+            display: none;
+        }
+
+        .glass-card {
+            border-radius: 18px;
+        }
+
+        .skill-card,
+        .tech-item {
+            padding: 1rem;
+        }
+
+        .skill-card .justify-between {
+            gap: 0.75rem;
+        }
+
+        .tech-item {
+            min-width: 0;
+            text-align: center;
+        }
+
+        .tech-item span,
+        .skill-card span,
+        .contact-card p,
+        .contact-card h4,
+        .group h3,
+        h1,
+        h2,
+        h3,
+        p {
+            overflow-wrap: anywhere;
+        }
+
+        .slide {
+            min-width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #slider-container,
+        #projects-slider-container {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        #slider-container .glass-card,
+        #projects-slider-container .glass-card {
+            width: 100%;
+        }
+
+        #tech-stack .grid,
+        #projects .grid {
+            min-width: 0;
+        }
+
+        #projects .h-64 {
+            height: 12rem;
+        }
+
+        .contact-card {
+            align-items: flex-start;
+        }
+
+        .contact-card > div:first-child {
+            flex: 0 0 3rem;
+        }
+
+        .contact-input {
+            min-height: 44px;
+            font-size: 1rem;
+        }
+
+        .success-message {
+            padding: 1.5rem;
+        }
+
+        footer .social-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (pointer: coarse) {
+            body {
+                cursor: auto;
+            }
+        }
+
+        /* 320px: small phones */
+        @media (min-width: 320px) and (max-width: 479px) {
+            #navbar > div,
+            main > section > div,
+            footer > div {
+                padding-left: 0.875rem;
+                padding-right: 0.875rem;
+            }
+
+            #navbar .font-orbitron,
+            footer .font-orbitron {
+                font-size: 1rem;
+            }
+
+            #mobile-menu {
+                gap: 1rem;
+            }
+
+            #mobile-menu a {
+                font-size: 1.25rem;
+            }
+
+            #home h1 {
+                font-size: 2.25rem;
+            }
+
+            h2.font-orbitron {
+                font-size: 1.875rem;
+            }
+
+            .neon-btn,
+            .neon-btn-outline,
+            .cv-btn {
+                width: 100%;
+            }
+
+            #home .flex.flex-wrap {
+                width: 100%;
+            }
+
+            .profile-wrapper,
+            .profile-container {
+                width: min(72vw, 220px);
+                height: min(72vw, 220px);
+            }
+
+            .glass-card.p-8,
+            .glass-card.p-6,
+            #projects .p-6 {
+                padding: 1rem;
+            }
+
+            .tech-item img,
+            .tech-item [data-lucide] {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
+
+            .contact-card {
+                padding: 1rem;
+                gap: 0.75rem;
+            }
+        }
+
+        /* 480px: mobile */
+        @media (min-width: 480px) {
+            #navbar > div,
+            main > section > div,
+            footer > div {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            #home h1 {
+                font-size: 3.5rem;
+            }
+
+            .profile-wrapper,
+            .profile-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .slide {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+
+            #projects .h-64 {
+                height: 15rem;
+            }
+        }
+
+        /* 768px: tablets */
+        @media (min-width: 768px) {
+            section[id]:not(#home) {
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+            }
+
+            #home {
+                padding-top: 7rem;
+                padding-bottom: 5rem;
+            }
+
+            #home h1 {
+                font-size: 4.5rem;
+            }
+
+            #home p,
+            section p {
+                font-size: 1.0625rem;
+            }
+
+            .profile-wrapper,
+            .profile-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-badge {
+                display: block;
+            }
+
+            .slide {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            #projects .h-64 {
+                height: 16rem;
+            }
+
+            .skill-card,
+            .tech-item {
+                padding: 1.25rem;
+            }
+
+            .glass-card {
+                border-radius: 22px;
+            }
+        }
+
+        /* 1024px: laptops */
+        @media (min-width: 1024px) {
+            section[id]:not(#home) {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+
+            #home {
+                min-height: 100vh;
+                padding-top: 5rem;
+                padding-bottom: 4rem;
+            }
+
+            #home h1 {
+                font-size: 5.75rem;
+            }
+
+            .profile-wrapper,
+            .profile-container {
+                width: 320px;
+                height: 320px;
+            }
+
+            #home .order-1 > .absolute {
+                display: block;
+            }
+
+            .skill-card {
+                padding: 1.5rem;
+            }
+
+            .tech-item {
+                padding: 1.5rem;
+            }
+        }
+
+        /* 1280px and above: desktops */
+        @media (min-width: 1280px) {
+            #home h1 {
+                font-size: 6rem;
+            }
+
+            #navbar > div,
+            main > section > div,
+            footer > div {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            #projects .h-64 {
+                height: 16rem;
+            }
+        }
     </style>
 </head>
 <body class="font-poppins antialiased selection:bg-purple-500 selection:text-white">
@@ -623,14 +1100,14 @@
 
             <a href="#contact" class="hidden lg:block neon-btn text-sm py-3 px-6 cursor-hover">Let's Talk</a>
             
-            <button id="mobile-menu-btn" class="lg:hidden text-white cursor-hover">
+            <button id="mobile-menu-btn" class="lg:hidden text-white cursor-hover" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-6">
-        <button id="close-menu" class="absolute top-6 right-6 text-white cursor-hover">
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-6" aria-hidden="true">
+        <button id="close-menu" class="absolute top-6 right-6 text-white cursor-hover" type="button" aria-label="Close navigation menu">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
         <a href="#home" class="text-2xl font-orbitron text-white hover:text-purple-400 transition-colors mobile-link">Home</a>
@@ -1234,82 +1711,111 @@
                     <p class="text-white/50 max-w-2xl mx-auto">Some of my recent work that showcases my skills.</p>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
-                    <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]">
-                        <div class="relative h-64 overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 z-0"></div>
-                            <div class="absolute inset-0 flex items-center justify-center z-0">
-                                <i data-lucide="user-circle" class="w-32 h-32 text-white/10"></i>
+                <div class="relative w-full overflow-hidden py-10" id="projects-slider-container">
+                    <div class="max-w-5xl mx-auto relative">
+                        <div class="slider-track" id="projects-track">
+                            <div class="slide">
+                                <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]">
+                                <div class="relative h-64 overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-cyan-600/20 z-0"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center z-0">
+                                        <i data-lucide="user-circle" class="w-32 h-32 text-white/10"></i>
+                                    </div>
+                                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800" alt="Portfolio Website" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-20 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                </div>
+                                
+                                <div class="p-6 relative z-30">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="px-3 py-1 bg-purple-500/20 rounded-full text-xs text-purple-400 font-semibold tracking-wider">PORTFOLIO</span>
+                                        <span class="px-3 py-1 bg-white/10 rounded-full text-xs text-white/60">Frontend</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Personal Portfolio Website</h3>
+                                    <p class="text-white/60 text-sm mb-4 leading-relaxed">
+                                        A modern, responsive portfolio website built with HTML, Tailwind CSS, and JavaScript. Features interactive 3D animations, custom cursor effects, dynamic tech stack slider, and contact form integration. Showcases projects and skills with a sleek dark theme UI.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">HTML5</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Tailwind CSS</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">JavaScript</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Three.js</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">GSAP</span>
+                                    </div>
+                                </div>
                             </div>
-                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&q=80&w=800" alt="Portfolio Website" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-20 opacity-60 group-hover:opacity-80 transition-opacity"></div>
                         </div>
-                        
-                        <div class="p-6 relative z-30">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-purple-500/20 rounded-full text-xs text-purple-400 font-semibold tracking-wider">PORTFOLIO</span>
-                                <span class="px-3 py-1 bg-white/10 rounded-full text-xs text-white/60">Frontend</span>
+                        <div class="slide">
+                            <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]" style="transition-delay: 100ms;">
+                                <div class="relative h-64 overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 z-0"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center z-0">
+                                        <i data-lucide="cloud" class="w-32 h-32 text-white/10"></i>
+                                    </div>
+                                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="Cloud Django AWS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-20 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                </div>
+                                
+                                <div class="p-6 relative z-30">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-xs text-cyan-400 font-semibold tracking-wider">CLOUD</span>
+                                        <span class="px-3 py-1 bg-white/10 rounded-full text-xs text-white/60">AWS</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Cloud-Based Django Web Application Deployment on AWS</h3>
+                                    <p class="text-white/60 text-sm mb-4 leading-relaxed">
+                                        Designed and deployed a static web application using on AWS S3 with static website hosting enabled. Configured bucket policies for public access and ensured efficient, globally accessible content delivery through the S3 endpoint.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Python</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">AWS S3</span>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">Personal Portfolio Website</h3>
-                            <p class="text-white/60 text-sm mb-4 leading-relaxed">
-                                A modern, responsive portfolio website built with HTML, Tailwind CSS, and JavaScript. Features interactive 3D animations, custom cursor effects, dynamic tech stack slider, and contact form integration. Showcases projects and skills with a sleek dark theme UI.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">HTML5</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Tailwind CSS</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">JavaScript</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Three.js</span>
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">GSAP</span>
+                        </div>
+                        <div class="slide">
+                            <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-pink-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(236,72,153,0.2)]" style="transition-delay: 200ms;">
+                                <div class="relative h-64 overflow-hidden">
+                                    <div class="absolute inset-0 bg-gradient-to-br from-pink-600/20 to-purple-600/20 z-0"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center z-0">
+                                        <i data-lucide="map-pin" class="w-32 h-32 text-white/10"></i>
+                                    </div>
+                                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=800" alt="Travel Planner App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-20 opacity-60 group-hover:opacity-80 transition-opacity"></div>
+                                </div>
+                                
+                                <div class="p-6 relative z-30">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span class="px-3 py-1 bg-pink-500/20 rounded-full text-xs text-pink-400 font-semibold tracking-wider">TRAVEL</span>
+                                        <span class="px-3 py-1 bg-white/10 rounded-full text-xs text-white/60">Web App</span>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors">Travel Planner</h3>
+                                    <p class="text-white/60 text-sm mb-4 leading-relaxed">
+                                        Travel Planner is a responsive web app for planning trips, finding destinations, and organizing travel details. It features a clean, user-friendly interface for booking, itinerary planning, and travel inspiration.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">HTML</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">CSS</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">JavaScript</span>
+                                        <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Travel API</span>
+                                    </div>
+                                    <a href="https://trip-for-heaven.up.railway.app/" target="_blank" class="inline-flex items-center gap-2 text-white hover:text-pink-300 transition-colors text-sm font-medium">
+                                        <i data-lucide="external-link" class="w-4 h-4"></i> Visit Travel Planner
+                                    </a>
+                                </div>
                             </div>
-                            <!-- <div class="flex gap-4">
-                                <a href="#" class="flex items-center gap-2 text-white hover:text-purple-400 transition-colors text-sm font-medium">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/karthick-rgb" target="_blank" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-medium">
-                                    <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                                </a>
-                            </div> -->
                         </div>
                     </div>
+                    <button id="projects-prev" class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/5 p-3 text-white shadow-lg border border-white/10 hover:bg-white/10 hidden md:inline-flex">
+                        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                    </button>
+                    <button id="projects-next" class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/5 p-3 text-white shadow-lg border border-white/10 hover:bg-white/10 hidden md:inline-flex">
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
 
-                    <div class="group relative rounded-2xl overflow-hidden cursor-hover reveal-on-scroll glass-card border border-white/10 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]" style="transition-delay: 100ms;">
-                        <div class="relative h-64 overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-blue-600/20 z-0"></div>
-                            <div class="absolute inset-0 flex items-center justify-center z-0">
-                                <i data-lucide="cloud" class="w-32 h-32 text-white/10"></i>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" alt="Cloud Django AWS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 relative z-10">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent z-20 opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                        </div>
-                        
-                        <div class="p-6 relative z-30">
-                            <div class="flex items-center gap-2 mb-3">
-                                <span class="px-3 py-1 bg-cyan-500/20 rounded-full text-xs text-cyan-400 font-semibold tracking-wider">CLOUD</span>
-                                <span class="px-3 py-1 bg-white/10 rounded-full text-xs text-white/60">AWS</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Cloud-Based Django Web Application Deployment on AWS</h3>
-                            <p class="text-white/60 text-sm mb-4 leading-relaxed">
-                                Designed and deployed a static web application using on AWS S3 with static website hosting enabled. Configured bucket policies for public access and ensured efficient, globally accessible content delivery through the S3 endpoint.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <!-- <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Django</span> -->
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Python</span>
-                                <!-- <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">AWS EC2</span> -->
-                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">AWS S3</span>
-                                <!-- <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">AWS RDS</span> -->
-                                <!-- <span class="px-3 py-1 bg-white/5 rounded-lg text-xs text-white/70 border border-white/10">Docker</span> -->
-                            </div>
-                            <!-- <div class="flex gap-4">
-                                <a href="#" class="flex items-center gap-2 text-white hover:text-cyan-400 transition-colors text-sm font-medium">
-                                    <i data-lucide="external-link" class="w-4 h-4"></i> Live Demo
-                                </a>
-                                <a href="https://github.com/karthick-rgb" target="_blank" class="flex items-center gap-2 text-white/60 hover:text-white transition-colors text-sm font-medium">
-                                    <i data-lucide="github" class="w-4 h-4"></i> Source Code
-                                </a>
-                            </div> -->
-                        </div>
-                    </div>
+                <div class="flex justify-center gap-4 mt-8" id="projects-dots-container">
+                    <div class="nav-dot projects-nav-dot active" data-index="0"></div>
+                    <div class="nav-dot projects-nav-dot" data-index="1"></div>
+                    <div class="nav-dot projects-nav-dot" data-index="2"></div>
                 </div>
                  <!-- <div class="text-center mt-12">
                     <a href="https://github.com/karthick-rgb" target="_blank" class="neon-btn-outline inline-flex items-center gap-2 cursor-hover">
@@ -1449,11 +1955,14 @@
                 </div>
 
                 <div class="social-links flex gap-4">
-                    <a href="https://www.linkedin.com/in/karthickraj-s-5287b828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover">
+                    <a href="https://www.linkedin.com/in/karthickraj-s-5287b828b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/karthick-rgb" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover ">
+                    <a href="https://github.com/karthick-rgb" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-pink-400 hover:border-pink-400 transition-colors cursor-hover ">
                         <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/916369318216" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" class="social-link w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:text-green-400 hover:border-green-400 transition-colors cursor-hover">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
@@ -1633,20 +2142,41 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        function toggleMenu() {
-            const isClosed = mobileMenu.classList.contains('translate-x-full');
-            if (isClosed) {
+        function setMenuOpen(isOpen) {
+            if (isOpen) {
                 mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
             } else {
                 mobileMenu.classList.add('translate-x-full');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
             }
         }
 
+        function toggleMenu() {
+            setMenuOpen(mobileMenu.classList.contains('translate-x-full'));
+        }
+
         mobileMenuBtn.addEventListener('click', toggleMenu);
-        closeMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', () => setMenuOpen(false));
         
         mobileLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
+            link.addEventListener('click', () => setMenuOpen(false));
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                setMenuOpen(false);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                setMenuOpen(false);
+            }
         });
 
         const profileContainer = document.getElementById('profile-container');
@@ -1692,7 +2222,7 @@
         }
 
         const track = document.getElementById('track');
-        const dots = document.querySelectorAll('.nav-dot');
+        const dots = document.querySelectorAll('#dots-container .nav-dot');
         let currentIndex = 0;
         const totalSlides = 3;
 
@@ -1765,6 +2295,91 @@
             }
         }
 
+        const projectsTrack = document.getElementById('projects-track');
+        const projectsDots = document.querySelectorAll('.projects-nav-dot');
+        const projectsPrev = document.getElementById('projects-prev');
+        const projectsNext = document.getElementById('projects-next');
+        let projectsIndex = 0;
+        const totalProjectSlides = 3;
+
+        function updateProjectSlider(index) {
+            projectsTrack.style.transform = `translateX(-${index * 100}%)`;
+            projectsDots.forEach(dot => dot.classList.remove('active'));
+            projectsDots[index].classList.add('active');
+            projectsIndex = index;
+        }
+
+        projectsDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                updateProjectSlider(index);
+            });
+        });
+
+        projectsPrev.addEventListener('click', () => {
+            if (projectsIndex > 0) {
+                updateProjectSlider(projectsIndex - 1);
+            }
+        });
+
+        projectsNext.addEventListener('click', () => {
+            if (projectsIndex < totalProjectSlides - 1) {
+                updateProjectSlider(projectsIndex + 1);
+            }
+        });
+
+        const projectSliderContainer = document.getElementById('projects-slider-container');
+        let projectStartX = 0;
+        let projectDragging = false;
+
+        projectSliderContainer.addEventListener('touchstart', (e) => {
+            projectStartX = e.touches[0].clientX;
+            projectDragging = true;
+        });
+
+        projectSliderContainer.addEventListener('touchend', (e) => {
+            if (!projectDragging) return;
+            const endX = e.changedTouches[0].clientX;
+            handleProjectSwipe(projectStartX, endX);
+            projectDragging = false;
+        });
+
+        projectSliderContainer.addEventListener('mousedown', (e) => {
+            projectStartX = e.clientX;
+            projectDragging = true;
+            projectsTrack.style.cursor = 'grabbing';
+        });
+
+        projectSliderContainer.addEventListener('mouseup', (e) => {
+            if (!projectDragging) return;
+            const endX = e.clientX;
+            handleProjectSwipe(projectStartX, endX);
+            projectDragging = false;
+            projectsTrack.style.cursor = 'grab';
+        });
+
+        projectSliderContainer.addEventListener('mouseleave', () => {
+            projectDragging = false;
+            projectsTrack.style.cursor = 'grab';
+        });
+
+        function handleProjectSwipe(start, end) {
+            const threshold = 50;
+            const diff = start - end;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    if (projectsIndex < totalProjectSlides - 1) {
+                        updateProjectSlider(projectsIndex + 1);
+                    }
+                } else {
+                    if (projectsIndex > 0) {
+                        updateProjectSlider(projectsIndex - 1);
+                    }
+                }
+            }
+        }
+
         const contactForm = document.getElementById('contactForm');
         const formContainer = document.getElementById('formContainer');
         const successMessage = document.getElementById('successMessage');
@@ -1817,7 +2432,4 @@
 </body>
 
 </html>
-
-
-
 
